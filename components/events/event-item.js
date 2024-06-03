@@ -3,21 +3,29 @@ import Link from "next/link";
 const EventItem = (props) => {
   const { title, image, date, location, id } = props;
 
+  const readableDate = new Date(date).toLocaleDateString("ko-KR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const address = location.replace(", ", "\n");
+  const exploreLink = `/events/${id}`;
+
   return (
     <li>
-      <img src="" alt="" />
+      <img src={`/${image}`} alt={title} />
       <div>
         <div>
-          <h2>TITLE</h2>
+          <h2>{title}</h2>
           <div>
-            <time>DATE</time>
+            <time>{readableDate}</time>
           </div>
           <div>
-            <address>ADDRESS</address>
+            <address>{address}</address>
           </div>
         </div>
         <div>
-          <Link href="/"> Explore Event</Link>
+          <Link href={exploreLink}> Explore Event</Link>
         </div>
       </div>
     </li>
