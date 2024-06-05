@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 
 import { getEventById } from "../../dummy-data";
 import EventSummary from "../../components/event-detail/event-summary";
+import EventLogistics from "../../components/event-detail/event-logistics";
 
 const EventDetailPage = () => {
   const router = useRouter();
@@ -14,11 +15,14 @@ const EventDetailPage = () => {
   }
 
   return (
-    <div>
-      <h1>Event Detail</h1>
-    </div>
     <>
       <EventSummary title={event.title} />
+      <EventLogistics
+        date={event.date}
+        address={event.location}
+        image={event.image}
+        imageAlt={event.title}
+      />
     </>
   );
 };
