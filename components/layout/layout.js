@@ -1,9 +1,12 @@
-const Layout = (props) => {
-  return <>
-  <main>
-    {props.children}
-  </main>
-  </>
-}
+import MainHeader from "./main-header";
 
-export default Layout
+const Layout = (props) => {
+  return (
+    <>
+      <MainHeader />
+      <main>{props.children}</main>
+    </>
+  );
+};
+
+export default Layout;
