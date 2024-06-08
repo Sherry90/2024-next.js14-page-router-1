@@ -29,9 +29,9 @@ const FilteredEventsPage = () => {
   }
 
   return (
-    <div>
+    <>
       <EventList items={filteredEvents} />
-    </div>
+    </>
   );
 };
 
