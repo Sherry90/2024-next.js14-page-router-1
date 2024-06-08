@@ -29,9 +29,11 @@ const FilteredEventsPage = () => {
     return <p>No events found for the chosen filter!</p>;
   }
 
+  const date = new Date(numYear, numMonth - 1);
+
   return (
     <>
-      <ResultsTitle />
+      <ResultsTitle date={date} />
       <EventList items={filteredEvents} />
     </>
   );
